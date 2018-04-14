@@ -1,0 +1,14 @@
+D:\DRDO CoursWorck\CoursProject\CoursProject\bin\Debug\CoursProject.exe.config
+D:\DRDO CoursWorck\CoursProject\CoursProject\bin\Debug\CoursProject.exe
+D:\DRDO CoursWorck\CoursProject\CoursProject\bin\Debug\CoursProject.pdb
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.csprojResolveAssemblyReference.cache
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.DataOutput.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.GeneratorFeatures.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Input.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Main.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Properties.Resources.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Result.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Statistic.resources
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.csproj.GenerateResource.Cache
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.exe
+D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.pdb
