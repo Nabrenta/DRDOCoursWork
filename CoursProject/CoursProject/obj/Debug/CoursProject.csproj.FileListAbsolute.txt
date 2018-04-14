@@ -12,3 +12,6 @@ D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.Statistic.re
 D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.csproj.GenerateResource.Cache
 D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.exe
 D:\DRDO CoursWorck\CoursProject\CoursProject\obj\Debug\CoursProject.pdb
+D:\DRDOCoursWork\CoursProject\CoursProject\bin\Debug\CoursProject.exe.config
+D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.exe
+D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.pdb
