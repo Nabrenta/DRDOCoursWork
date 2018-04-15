@@ -11,12 +11,12 @@ namespace CoursProject
         /// <summary>
         /// Height of pancake
         /// </summary>
-        double h;
+        public double H { get; private set; }
 
         /// <summary>
         /// Radius of pancake
         /// </summary>
-        double r;
+        public double R { get; private set; }
 
         /// <summary>
         /// Defoult constructor
@@ -31,8 +31,8 @@ namespace CoursProject
         /// <param name="r">Radius of pancake</param>
         public Pancake(double h, double r)
         {
-            this.h = h;
-            this.r = r;
+            H = h;
+            R = r;
         }
     }
 }

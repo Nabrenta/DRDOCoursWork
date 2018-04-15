@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CoursProject
 {
-    class Problem
+    /// <summary>
+    /// Class define problem for solve
+    /// </summary>
+    class Problem: PancakesCollaction
     {
 
         /// <summary>
@@ -15,16 +18,11 @@ namespace CoursProject
         public int M { get; set; }
 
         /// <summary>
-        /// List of pancakes
-        /// </summary>
-        public List<Pancake> PancakeList { get; set; }
-
-        /// <summary>
         /// Defoult constructor
         /// </summary>
-        public Problem()
+        public Problem(List<Pancake> pancakes)
         {
-            PancakeList = new List<Pancake>();
+            PancakeList = pancakes;
         }
     }
 }

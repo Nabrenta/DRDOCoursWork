@@ -32,18 +32,22 @@ namespace CoursProject
         /// <summary>
         /// Create problem objact from given data
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Created problem</returns>
         private Problem createProblem()
         {
+            //List of pancakes we have
+            List<Pancake> pancakesList = new List<Pancake>();
+            
+            //Define pancakes we have
+            for (int i = 0; i < PancakesCollaction.RowCount; i++)
+                pancakesList.Add(new Pancake(Convert.ToDouble(PancakesCollaction.Rows[i].Cells[0].Value), Convert.ToDouble(PancakesCollaction.Rows[i].Cells[1].Value)));
+
             //Define problem object
-            Problem forSolve = new Problem();
+            Problem forSolve = new Problem(pancakesList);
 
             //Define number of pancake we need 
             forSolve.M = (int)mInput.Value;
 
-            //Define pancakes we have
-            for (int i = 0; i < PancakesCollaction.RowCount-1; i++)
-                forSolve.PancakeList.Add(new Pancake(Convert.ToDouble(PancakesCollaction.Rows[i].Cells[0].Value), Convert.ToDouble(PancakesCollaction.Rows[i].Cells[1].Value)));
             return forSolve;
         }
 
