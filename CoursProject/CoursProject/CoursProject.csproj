@@ -82,6 +82,7 @@
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
     <Compile Include="Solution.cs" />
+    <Compile Include="Solver.cs" />
     <Compile Include="Statistic.cs">
       <SubType>Form</SubType>
     </Compile>

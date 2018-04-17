@@ -26,11 +26,13 @@ namespace CoursProject
         public Input()
         {
             InitializeComponent();
+
+            //Regular expression express double
             doubleNumber = @"^[0-9]*[.,]?[0-9]+$";
         }
 
         /// <summary>
-        /// Create problem objact from given data
+        /// Create problem object from given data
         /// </summary>
         /// <returns>Created problem</returns>
         private Problem createProblem()
@@ -64,6 +66,9 @@ namespace CoursProject
             else
             {
                 Problem problem = createProblem();
+
+                Solver.Greedy(problem);
+
                 //if form wasn't created or was cloused
                 if ((res == null) || res.IsDisposed)
                 {
