@@ -26,3 +26,17 @@ D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Properties.Res
 D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Result.resources
 D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Statistic.resources
 D:\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.csproj.GenerateResource.Cache
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\bin\Debug\CoursProject.exe.config
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.exe
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.pdb
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.csprojResolveAssemblyReference.cache
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.DataOutput.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.GeneratorFeatures.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Input.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Main.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Properties.Resources.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Result.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.Statistic.resources
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\obj\Debug\CoursProject.csproj.GenerateResource.Cache
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\bin\Debug\CoursProject.exe
+D:\DRDOCoursWork\DRDOCoursWork\CoursProject\CoursProject\bin\Debug\CoursProject.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursProject
 {
-    class Pancake
+    public class Pancake
     {
         /// <summary>
         /// Height of pancake

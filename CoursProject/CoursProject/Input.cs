@@ -61,19 +61,17 @@ namespace CoursProject
         private void go_Click(object sender, EventArgs e)
         {
             //If we need more pancakes than we have
-            if (PancakesCollaction.RowCount <= mInput.Value)
+            if (PancakesCollaction.RowCount < mInput.Value)
                 MessageBox.Show("Кількість млинців, що необхідно обрати, не може бути більшою за кількість млинців, що є в наявності!", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             else
             {
                 Problem problem = createProblem();
 
-                Solver.Greedy(problem);
-
                 //if form wasn't created or was cloused
                 if ((res == null) || res.IsDisposed)
                 {
                     //create form
-                    res = new Result();
+                    res = new Result(Solver.Greedy(problem));
                 }
                 res.Show();
             }

@@ -9,7 +9,7 @@ namespace CoursProject
     /// <summary>
     /// Class define problem solution
     /// </summary>
-    class Solution: PancakesCollaction
+    public class Solution: PancakesCollaction
     {
         /// <summary>
         /// Max sqear of pancakes piramid
@@ -17,16 +17,24 @@ namespace CoursProject
         public double Result { get; private set; }
 
         /// <summary>
+        /// Used alhorithm
+        /// </summary>
+        public Alhorythms SoursAlhorythm;
+
+        /// <summary>
         /// Initialisation constructor
         /// </summary>
         /// <param name="pancakes">List of pancakes</param>
-        public Solution (List<Pancake> pancakes)
+        public Solution (List<Pancake> pancakes, Alhorythms soursAlhorythm)
         {
             //Initialize list of pancakes
             PancakeList = pancakes;
 
             //Finde the result
             Result = findeResult();
+
+            //Identifi how solution was created
+            SoursAlhorythm = soursAlhorythm;
         }
 
         /// <summary>
@@ -35,25 +43,29 @@ namespace CoursProject
         /// <returns>Result</returns>
         private double findeResult()
         {
-            //Pancake with the biggest radius
-            Pancake max = PancakeList[0];
-
             //Result
             double result = 0.0;
 
-            //In list of pancake
-            foreach (Pancake p in PancakeList)
+            //If we have any pancakes
+            if (PancakeList.Count > 0)
             {
-                //Add outer sqear
-                result += 2 * Math.PI * p.R * p.H;
+                //Pancake with the biggest radius
+                Pancake max = PancakeList[0];
 
-                //Define if radius of current pancake is bigger than preveous
-                if (p.R > max.R)
-                    max = p;
+                //In list of pancake
+                foreach (Pancake p in PancakeList)
+                {
+                    //Add outer sqear
+                    result += 2 * Math.PI * p.R * p.H;
+
+                    //Define if radius of current pancake is bigger than preveous
+                    if (p.R > max.R)
+                        max = p;
+                }
+
+                //Add top sqear of the biggest radius pancake
+                result += Math.PI * Math.Pow(max.R, 2);
             }
-
-            //Add top sqear of the biggest radius pancake
-            result += Math.PI * Math.Pow(max.R, 2);
             return result;
         }
     }
