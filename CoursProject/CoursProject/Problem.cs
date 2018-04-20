@@ -9,7 +9,7 @@ namespace CoursProject
     /// <summary>
     /// Class define problem for solve
     /// </summary>
-    class Problem: PancakesCollaction
+    public class Problem: PancakesCollaction
     {
 
         /// <summary>

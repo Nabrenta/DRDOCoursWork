@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CoursProject
 {
-    class Generator
+    public class Generator
     {
         /// <summary>
         /// Number of problems

@@ -61,19 +61,17 @@ namespace CoursProject
         private void go_Click(object sender, EventArgs e)
         {
             //If we need more pancakes than we have
-            if (PancakesCollaction.RowCount <= mInput.Value)
+            if (PancakesCollaction.RowCount < mInput.Value)
                 MessageBox.Show("Кількість млинців, що необхідно обрати, не може бути більшою за кількість млинців, що є в наявності!", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             else
             {
                 Problem problem = createProblem();
 
-                Solver.Greedy(problem);
-
                 //if form wasn't created or was cloused
                 if ((res == null) || res.IsDisposed)
                 {
                     //create form
-                    res = new Result();
+                    res = new Result(Solver.Greedy(problem));
                 }
                 res.Show();
             }
@@ -102,6 +100,10 @@ namespace CoursProject
             }
             if (OK)
                 PancakesCollaction.Rows.Add(new object[] { Convert.ToDouble(height.Text), Convert.ToDouble(radius.Text) });
+
+            //Empty text lines
+            height.Text = "";
+            radius.Text = "";
         }
 
         //Checking if entered line is correct
@@ -138,6 +140,51 @@ namespace CoursProject
             {
                 ((DataGridView)sender).CancelEdit();
                 MessageBox.Show("Введено недопустимі дані", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        /// <summary>
+        /// Reset input information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reset_Click(object sender, EventArgs e)
+        {
+            //Empty text lines
+            height.Text = "";
+            radius.Text = "";
+
+            //Empty pancake collaction
+            PancakesCollaction.Rows.Clear();
+
+            //Reset number of pancake we need
+            mInput.Value = 0;
+        }
+
+        /// <summary>
+        /// Numeration of rows
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Added row</param>
+        private void PancakesCollaction_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            //Define numerations of rows
+            PancakesCollaction.Rows[e.RowIndex].HeaderCell.Value = (e.RowIndex + 1).ToString();
+        }
+
+        /// <summary>
+        /// Refresh numeration if row removed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Remuved row</param>
+        private void PancakesCollaction_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            //for each row after removed one
+            for (int i = e.RowIndex; i < PancakesCollaction.RowCount; i++)
+            {
+                //Decrement row number
+                string header = (Convert.ToInt32(PancakesCollaction.Rows[i].HeaderCell.Value) - 1).ToString();
+                PancakesCollaction.Rows[i].HeaderCell.Value = header;
             }
         }
     }
