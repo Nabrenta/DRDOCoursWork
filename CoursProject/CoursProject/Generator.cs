@@ -7,28 +7,49 @@ using System.IO;
 
 namespace CoursProject
 {
+    /// <summary>
+    /// Generator of problem
+    /// </summary>
     public class Generator
     {
         /// <summary>
-        /// Number of problems
+        /// Size of the problem from the first group
         /// </summary>
-        private int Size;
+        private int minSize;
 
         /// <summary>
-        /// Problems size
+        /// Size of the problem from the last group
         /// </summary>
-        private int Capacity;
+        private int maxSize;
+
         /// <summary>
-        /// Class constructor
+        /// Step betveen group size
         /// </summary>
-        /// <param name="size">Number of problems</param>
-        /// <param name="capacity">Problems size</param>
-        public Generator(int size, int capacity)
+        private int step;
+
+        /// <summary>
+        /// Number of problem from each group
+        /// </summary>
+        private int eachNumber;
+
+        /// <summary>
+        /// Initialization constructor
+        /// </summary>
+        /// <param name="minSize">Size of the problem from the first group</param>
+        /// <param name="maxSize">Size of the problem from the last group</param>
+        /// <param name="step">Step betveen group size</param>
+        /// <param name="eachNumber">Number of problem from each group</param>
+        public Generator(int minSize, int maxSize, int step, int eachNumber)
         {
-            this.Size = size;
-            this.Capacity = capacity;
+            this.minSize = minSize;
+            this.maxSize = maxSize;
+            this.step = step;
+            this.eachNumber = eachNumber;
         }
 
+        /// <summary>
+        /// Generate data
+        /// </summary>
         public void Generate()
         {
             try
@@ -44,22 +65,27 @@ namespace CoursProject
 
                 //Generate problems
 
-                //Write problems number
-                sw.WriteLine(Size);
+                //Write number of 
+                sw.WriteLine(eachNumber);
 
-                //Create chousen number of problems
-                for (int i = 0; i < Size; i++)
+                //For each group of problems
+                for(int i = minSize; i <= maxSize; i+=step)
                 {
-                    cur = Capacity.ToString() + " " + rand.Next(0, Capacity);
-                    sw.WriteLine(cur);
-
-                    //Create chousen number of pancakes
-                    for (int j = 0; j < Capacity; j++)
+                    //For each problem
+                    for (int j = 0; j<eachNumber; j++)
                     {
-                        cur = (rand.Next() + rand.NextDouble()).ToString() + " " + (rand.Next() + rand.NextDouble()).ToString();
+                        cur = i.ToString() + " " + rand.Next() % i;
                         sw.WriteLine(cur);
+
+                        //For each pancake
+                        for (int k = 0; k<i; k++)
+                        {
+                            cur = rand.NextDouble().ToString() + " " + rand.NextDouble();
+                            sw.WriteLine(cur);
+                        }
                     }
                 }
+
                 sw.Close();
             }
             catch (Exception e)

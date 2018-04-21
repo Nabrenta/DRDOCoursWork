@@ -26,14 +26,8 @@ namespace CoursProject
         /// <returns></returns>
         private Generator initializeGenerator()
         {
-            //Number of problems
-            int size = (int)sizeInput.Value;
-
-            //Size of problems
-            int capacity = (int)capacityInput.Value;
-
             //Create generator
-            return new Generator(size, capacity);
+            return new Generator((int)sizeMin.Value, (int)sizeMax.Value, (int)step.Value, (int)eachNumber.Value);
         }
 
         /// <summary>
