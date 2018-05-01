@@ -78,6 +78,8 @@ namespace CoursProject
             //Variable for temporary saving pancake
             Pancake temp;
 
+            //Finding solution
+
             //Sort pancakes
             problem.PancakeList.Sort(new Comparison<Pancake>(OutSqrCompear));
             problem.PancakeList.Reverse();
@@ -91,6 +93,8 @@ namespace CoursProject
             //If m>0 (if another, problem doesn't make sens
             if (problem.M > 0)
             {
+                //Finding solution
+                #region
                 //Finde sum of M-1 pancake with max outer sqear
                 for (int i = 0; i < problem.M - 1; i++)
                     solvByMaxOuter += 2 * Math.PI * problem.PancakeList[i].H * problem.PancakeList[i].R;
@@ -112,9 +116,10 @@ namespace CoursProject
                     //Add it's sqear to solution
                     solvWithMaxTop += (2 * Math.PI * temp.H * temp.R + Math.PI * Math.Pow(temp.R, 2));
                 }
-            
-                //Finde numbers of needed pancakes
+                #endregion
 
+                //Forming array of needable pancakes indexes
+                #region
                 //Identifie first m-1 pancakes
                 int[] numbers = new int[problem.M];
 
@@ -130,6 +135,7 @@ namespace CoursProject
                 else
                     //Add last-from-better number to list
                     numbers[problem.M - 1] = problem.M - 1;
+                #endregion
                 return SolutionConstructor(numbers, problem.PancakeList, Alhorythms.GreedyAlhorythm);                             
             }
             //If we don't need any pancake, return empty solution

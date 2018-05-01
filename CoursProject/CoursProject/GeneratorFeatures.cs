@@ -10,10 +10,17 @@ using System.Windows.Forms;
 
 namespace CoursProject
 {
+    //TODO: control situation if min is bigger then max
+    //TODO: control situation if some values are 0
     public partial class GeneratorFeatures : Form
     {
         //Form for check and edit data
         DataOutput output;
+
+        /// <summary>
+        /// Addres where file with generated problem have to be plased
+        /// </summary>
+        string ProblemFileAddress = @".\temp\input.txt";
 
         public GeneratorFeatures()
         {
@@ -42,12 +49,12 @@ namespace CoursProject
                 //Create generator
                 Generator generator = initializeGenerator();
 
-                generator.Generate();
+                generator.Generate(ProblemFileAddress);
 
                 //if output form isn't created or destroyed
                 if ((output == null) || (output.IsDisposed))
                 {
-                    output = new DataOutput();
+                    output = new DataOutput(ProblemFileAddress);
                 }
                 output.Show();
             }

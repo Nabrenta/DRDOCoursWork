@@ -79,9 +79,9 @@
             // content
             // 
             this.content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.content.Enabled = false;
             this.content.Location = new System.Drawing.Point(3, 3);
             this.content.Name = "content";
+            this.content.ReadOnly = true;
             this.content.Size = new System.Drawing.Size(278, 224);
             this.content.TabIndex = 1;
             this.content.Text = "";

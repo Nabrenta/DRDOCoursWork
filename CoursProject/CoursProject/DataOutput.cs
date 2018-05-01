@@ -16,11 +16,18 @@ namespace CoursProject
         StreamReader sr;
 
         /// <summary>
-        /// Form for output statistic
+        /// Childe form (for output statistic)
         /// </summary>
         Statistic statistic;
-        public DataOutput()
+
+        /// <summary>
+        /// Addres of sours file
+        /// </summary>
+        string Sours;
+
+        public DataOutput(string sours)
         {
+            this.Sours = sours;
             InitializeComponent();
         }
 
@@ -31,8 +38,11 @@ namespace CoursProject
         /// <param name="e"></param>
         private void go_Click(object sender, EventArgs e)
         {
+            Dictionary<int, double> res = Iterator.Iterat(Solver.Greedy, Sours);
+            Dictionary<Alhorythms, Dictionary<int, double>> soursData = new Dictionary<Alhorythms, Dictionary<int, double>>();
+            soursData.Add(Alhorythms.GreedyAlhorythm, res);
             if ((statistic == null)||(statistic.IsDisposed))
-                statistic = new Statistic();
+                statistic = new Statistic(soursData);
             statistic.Show();
         }
 
@@ -46,7 +56,7 @@ namespace CoursProject
             try
             {
                 //Read data from file
-                sr = new StreamReader(".\\temp\\temp.txt");
+                sr = new StreamReader(Sours);
                 content.Text = sr.ReadToEnd();
             }
             catch (Exception e2)

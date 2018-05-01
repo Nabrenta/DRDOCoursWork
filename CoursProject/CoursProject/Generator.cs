@@ -50,12 +50,13 @@ namespace CoursProject
         /// <summary>
         /// Generate data
         /// </summary>
-        public void Generate()
+        /// <param name="address">Address of output file</param>
+        public void Generate(string address)
         {
             try
             {
                 //Create stream writer
-                StreamWriter sw = new StreamWriter(".\\temp\\temp.txt", false);
+                StreamWriter sw = new StreamWriter(address, false);
 
                 //Create generator
                 Random rand = new Random();
@@ -65,8 +66,10 @@ namespace CoursProject
 
                 //Generate problems
 
-                //Write number of 
+                //Write number of problem with each size
                 sw.WriteLine(eachNumber);
+
+                sw.WriteLine((int)((maxSize - minSize) / step));
 
                 //For each group of problems
                 for(int i = minSize; i <= maxSize; i+=step)

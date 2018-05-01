@@ -24,12 +24,10 @@ namespace CoursProject
         /// <summary>
         /// Initialisation constructor
         /// </summary>
-        /// <param name="pancakes">List of pancakes</param>
-        public Solution (List<Pancake> pancakes, Alhorythms soursAlhorythm)
+        /// <param name="pList">List of pancakes</param>
+        public Solution (List<Pancake> pList, Alhorythms soursAlhorythm)
+            :base(pList)
         {
-            //Initialize list of pancakes
-            PancakeList = pancakes;
-
             //Finde the result
             Result = findeResult();
 

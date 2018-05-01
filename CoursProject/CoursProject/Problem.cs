@@ -18,11 +18,14 @@ namespace CoursProject
         public int M { get; set; }
 
         /// <summary>
-        /// Defoult constructor
+        /// Initialisation constructor
         /// </summary>
-        public Problem(List<Pancake> pancakes)
+        /// <param name="pList">List of pancake</param>
+        /// <param name="m">number of pancake we need</param>
+        public Problem(List<Pancake> pList, int m)
+            :base(pList)
         {
-            PancakeList = pancakes;
+            M = m;
         }
     }
 }

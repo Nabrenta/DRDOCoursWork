@@ -90,6 +90,7 @@
     <Compile Include="Statistic.Designer.cs">
       <DependentUpon>Statistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Iterator.cs" />
     <EmbeddedResource Include="DataOutput.resx">
       <DependentUpon>DataOutput.cs</DependentUpon>
     </EmbeddedResource>

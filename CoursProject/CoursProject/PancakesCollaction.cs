@@ -11,6 +11,18 @@ namespace CoursProject
     /// </summary>
     public abstract class PancakesCollaction
     {
+        /// <summary>
+        /// List of pancake
+        /// </summary>
         public List<Pancake> PancakeList { get; protected set; }
+
+        /// <summary>
+        /// Basick constructor
+        /// </summary>
+        /// <param name="pList">List of pancake</param>
+        protected PancakesCollaction(List<Pancake> pList)
+        {
+            PancakeList = pList;
+        }
     }
 }

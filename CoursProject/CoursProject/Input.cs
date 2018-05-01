@@ -45,10 +45,7 @@ namespace CoursProject
                 pancakesList.Add(new Pancake(Convert.ToDouble(PancakesCollaction.Rows[i].Cells[0].Value), Convert.ToDouble(PancakesCollaction.Rows[i].Cells[1].Value)));
 
             //Define problem object
-            Problem forSolve = new Problem(pancakesList);
-
-            //Define number of pancake we need 
-            forSolve.M = (int)mInput.Value;
+            Problem forSolve = new Problem(pancakesList, (int)mInput.Value);
 
             return forSolve;
         }
