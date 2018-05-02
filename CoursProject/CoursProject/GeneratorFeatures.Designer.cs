@@ -33,13 +33,13 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.sizeMin = new System.Windows.Forms.NumericUpDown();
             this.sizeMax = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.step = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.eachNumber = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sizeMin)).BeginInit();
@@ -115,6 +115,24 @@
             this.sizeMax.Size = new System.Drawing.Size(120, 20);
             this.sizeMax.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Мінімальна:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(142, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Максимальна:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -143,6 +161,11 @@
             // eachNumber
             // 
             this.eachNumber.Location = new System.Drawing.Point(3, 166);
+            this.eachNumber.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.eachNumber.Name = "eachNumber";
             this.eachNumber.Size = new System.Drawing.Size(120, 20);
             this.eachNumber.TabIndex = 6;
@@ -155,24 +178,6 @@
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Розмірність задач:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Максимальна:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Мінімальна:";
             // 
             // GeneratorFeatures
             // 

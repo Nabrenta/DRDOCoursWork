@@ -33,8 +33,23 @@ namespace CoursProject
         /// <returns></returns>
         private Generator initializeGenerator()
         {
-            //Create generator
-            return new Generator((int)sizeMin.Value, (int)sizeMax.Value, (int)step.Value, (int)eachNumber.Value);
+            try
+            {
+                if (sizeMin.Value > sizeMax.Value)
+                { throw new Exception("Мінімальна розмірність не може бути меншою за максимальну!"); }
+                else if (sizeMin.Value == 0)
+                { throw new Exception("Неможливо створити задачу нульової розмірості!"); }
+                else if (step.Value == 0)
+                { throw new Exception("Крок не може бути меньше одиниці"); }
+                else
+                //Create generator
+                { return new Generator((int)sizeMin.Value, (int)sizeMax.Value, (int)step.Value, (int)eachNumber.Value); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return null;
+            }
         }
 
         /// <summary>
@@ -49,14 +64,17 @@ namespace CoursProject
                 //Create generator
                 Generator generator = initializeGenerator();
 
-                generator.Generate(ProblemFileAddress);
-
-                //if output form isn't created or destroyed
-                if ((output == null) || (output.IsDisposed))
+                if (generator != null)
                 {
-                    output = new DataOutput(ProblemFileAddress);
+                    generator.Generate(ProblemFileAddress);
+
+                    //if output form isn't created or destroyed
+                    if ((output == null) || (output.IsDisposed))
+                    {
+                        output = new DataOutput(ProblemFileAddress);
+                    }
+                    output.Show();
                 }
-                output.Show();
             }
             catch (Exception e1)
             {
