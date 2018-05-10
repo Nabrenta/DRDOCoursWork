@@ -162,7 +162,7 @@
             // 
             this.eachNumber.Location = new System.Drawing.Point(3, 166);
             this.eachNumber.Maximum = new decimal(new int[] {
-            100000000,
+            100000,
             0,
             0,
             0});

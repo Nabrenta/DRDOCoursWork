@@ -69,14 +69,16 @@ namespace CoursProject
                 //Write number of problem with each size
                 sw.WriteLine(eachNumber);
 
-                sw.WriteLine((int)((maxSize - minSize) / step));
+                sw.WriteLine((int)((maxSize - minSize) / step + 1));
 
                 //For each group of problems
-                for(int i = minSize; i <= maxSize; i+=step)
+                for (int i = minSize; i <= maxSize; i+=step)
                 {
+
                     //For each problem
                     for (int j = 0; j<eachNumber; j++)
                     {
+
                         cur = i.ToString() + " " + rand.Next() % i;
                         sw.WriteLine(cur);
 
@@ -90,6 +92,7 @@ namespace CoursProject
                 }
 
                 sw.Close();
+                sw.Dispose();
             }
             catch (Exception e)
             {

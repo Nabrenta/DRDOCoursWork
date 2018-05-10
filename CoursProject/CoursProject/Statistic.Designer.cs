@@ -97,6 +97,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Statistic";
             this.Text = "Результати дослідження";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Statistic_FormClosing);
             this.Load += new System.EventHandler(this.Statistic_Load);
             this.tabControl1.ResumeLayout(false);
             this.time.ResumeLayout(false);

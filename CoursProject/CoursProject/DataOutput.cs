@@ -38,11 +38,13 @@ namespace CoursProject
         /// <param name="e"></param>
         private void go_Click(object sender, EventArgs e)
         {
-            Dictionary<int, double> res = Iterator.Iterat(Solver.Greedy, Sours);
-            Dictionary<Alhorythms, Dictionary<int, double>> soursData = new Dictionary<Alhorythms, Dictionary<int, double>>();
-            soursData.Add(Alhorythms.GreedyAlhorythm, res);
-            if ((statistic == null)||(statistic.IsDisposed))
+            if ((statistic == null) || (statistic.IsDisposed))
+            {
+                Dictionary<int, double> res = Iterator.Iterat(Solver.Greedy, Sours);
+                Dictionary<Alhorythms, Dictionary<int, double>> soursData = new Dictionary<Alhorythms, Dictionary<int, double>>();
+                soursData.Add(Alhorythms.GreedyAlhorythm, res);
                 statistic = new Statistic(soursData);
+            }
             statistic.Show();
         }
 
@@ -59,9 +61,22 @@ namespace CoursProject
                 sr = new StreamReader(Sours);
                 content.Text = sr.ReadToEnd();
             }
+            //If we get OutOfMemoryExeption (generated file is too big to express)
+            catch (OutOfMemoryException)
+            {
+                MessageBox.Show("Нажаль, файл вхідних данних занадто великий, щоб відобразити його.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //If some another problem happend
             catch (Exception e2)
             {
                 MessageBox.Show(e2.Message);
+            }
+
+            //Anyway, close stream;
+            finally
+            {
+                sr.Close();
             }
         }
     }

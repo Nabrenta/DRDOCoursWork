@@ -23,6 +23,8 @@ namespace CoursProject
             //Create stream
             StreamReader sr = new StreamReader(connect);
 
+            StreamWriter sw = new StreamWriter(@".\temp\" + Method.ToString() + ".txt", false);
+
             //Define size of each same-size problem block
             int sizeEach = Convert.ToInt32(sr.ReadLine());
 
@@ -64,7 +66,13 @@ namespace CoursProject
                     DateTime start = DateTime.Now;
 
                     //Use method
-                    Method(new Problem(pList, m));
+                    Solution solv = Method(new Problem(pList, m));
+
+                    sw.WriteLine(solv.Result);
+                    foreach(Pancake p in solv.PancakeList)
+                    {
+                        sw.WriteLine(p.H + " " + p.R);
+                    }
 
                     //Define alhorythm finish time
                     DateTime finish = DateTime.Now;
@@ -77,6 +85,9 @@ namespace CoursProject
                         res[size] += (finish - start).TotalMilliseconds;
                 }
             }
+            //Close file stream
+            sr.Close();
+            sw.Close();
             return res;
         }
     }
